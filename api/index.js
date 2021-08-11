@@ -14,18 +14,6 @@ const staffRoutes = require('./src/routes/staff');
 const expenseRoutes = require('./src/routes/expense');
 const userRoutes = require('./src/routes/user');
 
-const defaultProductRoutes = require('./src/routes/defaultProduct');
-const customerAccountRoutes = require('./src/routes/customerAccount');
-const vendorAccountRoutes = require('./src/routes/vendorAccount');
-
-const vendorOrderRoutes = require('./src/routes/vendorOrder');
-const customerOrderRoutes = require('./src/routes/customerOrder');
-
-const dailyProductUpdate = require('./src/routes/dailyProductUpdate');
-const staffAttendance = require('./src/routes/staffAttendance');
-
-const reportRoutes = require('./src/routes/report');
-
 mongoose.connect('mongodb+srv://santosh2686:Santosh@2686c@cluster0.qsr8p.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -64,19 +52,6 @@ app.use('/vendor', vendorRoutes);
 app.use('/staff', staffRoutes);
 app.use('/expense', expenseRoutes)
 app.use('/user', userRoutes);
-
-app.use('/default-product', defaultProductRoutes);
-
-app.use('/customer-account', customerAccountRoutes);
-app.use('/vendor-account', vendorAccountRoutes);
-
-app.use('/report', reportRoutes);
-
-app.use('/vendor-order', vendorOrderRoutes);
-app.use('/customer-order', customerOrderRoutes);
-
-app.use('/daily-product', dailyProductUpdate);
-app.use('/staff-attendance', staffAttendance);
 
 // Error Handling
 app.use((req, res, next) => {
